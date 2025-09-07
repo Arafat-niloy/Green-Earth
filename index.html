@@ -80,12 +80,76 @@
     </header>
 
     <main class="bg-[#F0FDF4]">
-      <section class="tree_selection border-1 mb-5">
+      <section class="tree_selection border-1 mb-5 w-11/12 mx-auto">
         <div>
-          <h2 class="text-center text-2xl font-bold">Choose Your Trees</h2>
+          <h2 class="text-center text-2xl font-bold mb-5">Choose Your Trees</h2>
         </div>
-        <div class="tree_parts"></div>
+        
+        <div class="tree_parts grid grid-cols-2 md:grid md:grid-cols-5 lg:grid lg:grid-cols-12 md:gap-8 py-4 items-start border"> 
+          <!-- left category side  -->
+          <aside id="left_side_catg" class="col-span-1 md:col-span-2 lg:col-span-3 space-y-4 ">
+            <h3 class="font-bold text-xl">Categories</h3>
+            <ul id="cat_list" class="space-y-2"></ul>
+          </aside>
+
+
+          <!-- card side  -->
+          <div id="card_container" class="col-span-2 md:col-span-3 p gap-6 grid grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:col-span-6">
+          
+            
+
+
+
+
+
+
+          </div>
+
+          
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- cart side  -->
+          <aside id="right_side_cart" class=" lg:col-span-3 px-6 bg-white rounded-xl space-y-4 shadow-sm pb-4">
+            <h2 class="font-bold text-xl">Your Cart</h2>
+            <div id="cart_List" class="">
+              
+            </div>
+
+            <hr>
+            <div class="flex justify-between text-xl ">
+              <div>Total:</div>
+              <div> ৳1000 </div> 
+            </div>
+          </aside>
+        </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <section
         class="about_campaign flex flex-col justify-between w-9/12 md:w-3/5 mx-auto gap-4 my-10 space-y-6 items-center"
@@ -115,26 +179,26 @@
         </div>
       </section>
 
-      <section class="impact_section bg-[#CFF0DC] px-12 py-20">
+      <section class="impact_section bg-[#CFF0DC] px-12 py-26">
         <div class="space-y-8">
-          <h2 class="text-center font-bold text-3xl">Our Impact</h2>
+          <h2 class="text-center font-semibold text-3xl">Our Impact</h2>
           <div
             class="flex flex-col md:flex md:flex-row gap-6 md:gap-10 text-center items-center justify-center"
           >
             <div
-              class="bg-white rounded-xl text-center px-5 py-10 w-90 md:w-120 space-y-2"
+              class="bg-white rounded-xl text-center px-2 md:px-5 py-5 md:py-10 w-76 md:w-125 space-y-2"
             >
               <h2 class="text-[#15803D] text-3xl font-semibold">500K+</h2>
               <p>Trees Planted</p>
             </div>
             <div
-              class="bg-white rounded-xl text-center px-5 py-10 w-90 md:w-120 space-y-2"
+              class="bg-white rounded-xl text-center px-2 md:px-5 py-5 md:py-10 w-76 md:w-125 space-y-2"
             >
               <h2 class="text-[#15803D] text-3xl font-semibold">120+</h2>
               <p>Communities Involved</p>
             </div>
             <div
-              class="bg-white rounded-xl text-center px-5 py-10 w-90 md:w-120 space-y-2"
+              class="bg-white rounded-xl text-center px-2 md:px-5 py-5 md:py-10 w-76 md:w-125 space-y-2"
             >
               <h2 class="text-[#15803D] text-3xl font-semibold">30+</h2>
               <p>Countries Reached</p>
@@ -147,15 +211,15 @@
     <footer>
       <section class="bg-[#166534]">
         <div class="flex flex-col items-center space-y-8 py-20 w-3/5 mx-auto">
-          <p class="text-white text-4xl font-medium">Plant a Tree Today</p>
-          <form class="flex flex-col gap-5 border-none px-12 py-10 bg-[#15803D] rounded-xl shadow-[0px_4px_22px_0px_rgba(0,0,0,0.06)]">
-            <input type="text" placeholder="Your Name" class="input w-150 h-14 text-lg " />
+          <p class="text-white text-2xl md:text-4xl font-medium">Plant a Tree Today</p>
+          <form class="flex flex-col gap-5 border-none p-4 md:px-12 md:py-10 bg-[#15803D] rounded-xl shadow-[0px_4px_22px_0px_rgba(0,0,0,0.06)]">
+            <input type="text" placeholder="Your Name" class="input w-70 md:w-150 h-8 md:h-14 md:text-lg " />
             <input
               type="email"
               placeholder="Your Email Address"
-              class="input w-150 h-14 text-lg"
+              class="input w-70 md:w-150 h-8 md:h-14 md:text-lg"
             />
-            <select class="select border-gray-300 w-150 h-14 rounded p-3 text-lg ">
+            <select class="select border-gray-300 w-70 md:w-150 h-10 md:h-14 rounded p-3 md:text-lg ">
               <option value="">Number of Trees</option>
               <option value="">2 Trees</option>
               <option value="">5 Trees</option>
@@ -172,7 +236,7 @@
         </div>
       </section>
 
-      <section class="text-center bg-[#14532D] text-white py-6">
+      <section class="text-center bg-[#14532D] text-white py-6 text-sm md:text-base">
         <p>© 2025 Green Earth. All Rights Reserved.</p>
       </section>
     </footer>
