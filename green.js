@@ -52,7 +52,9 @@ const displayCardList = (cards) => {
     })
 }
 
+
 //addToCart function
+let totalPrice = 0
 const addToCart = (name, price) => {
     const cartContainer = document.getElementById("cart_List")
     // cartContainer.innerHTML=""
@@ -64,11 +66,24 @@ const addToCart = (name, price) => {
                   <h3>${name}</h3>
                   <p>৳${price} x 1</p>
                 </div>
-                <p>❌</p>
+                <p class="removeClick cursor-pointer">❌</p>
               </div>
     `
+    //remove cartList
+    cartList.querySelector(".removeClick").addEventListener("click", () =>{
+        cartList.remove()
+        totalPrice -= price
+        document.getElementById("total_price").innerText = totalPrice
+
+    })
+
+    //add & sum totalPrice
     cartContainer.append(cartList)
+
+    totalPrice += price
+    document.getElementById("total_price").innerText = totalPrice
 }
+
 
 
 
