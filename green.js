@@ -26,6 +26,30 @@ const displayCatList = (cat) => {
     const catContainer = document.getElementById("cat_list")
     catContainer.innerHTML = ""
 
+//all plants clicked
+             const allPlants =   document.createElement("li")
+             allPlants.className = "cursor-pointer hover:text-white hover:bg-green-700 text-xl p-2 rounded"
+             allPlants.textContent = "All Tress"
+             
+             allPlants.addEventListener("click", (e) => {
+
+                //active class remove
+                 const activeEffect = document.querySelectorAll("#cat_list li")
+                 activeEffect.forEach(li => {
+                   li.classList.remove("active")
+                   })
+                //active class add by targeted All plantName e click
+                 e.target.classList.add("active")
+
+                //load All plants function call 
+                 loadAllPlantsCard()
+                   
+             })
+             catContainer.append(allPlants)
+
+
+
+    //category plants clicked
     cat.forEach(element => {
         const catDiv = document.createElement("li")
         catDiv.className="cursor-pointer hover:text-white hover:bg-green-700 text-xl p-2 rounded"
@@ -33,6 +57,7 @@ const displayCatList = (cat) => {
 
         catDiv.addEventListener("click", (e) => {
 
+                
                    //active class remove 
                    const activeEffect = document.querySelectorAll("#cat_list li")
                    activeEffect.forEach(li => {
@@ -127,9 +152,10 @@ const displayModal = (content) => {
     <p class=""><span class="font-bold">Category:</span> ${content.category}</p>
     <p><span class="font-bold">Price:</span> ৳${content.price}</p>
     <p><span class="font-bold">Description:</span> ${content.description}</p>
+    
     <div class="modal-action">
       <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
+        
         <button class="btn">Close</button>
       </form>
     </div>
