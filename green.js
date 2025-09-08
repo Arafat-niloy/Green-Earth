@@ -124,7 +124,7 @@ const displayCardList = (cards) => {
               <p>৳${card.price}</p>
             
             </div>  
-            <button onclick="addToCart('${card.name}', ${card.price})" class="btn btn-primary w-full rounded-4xl text-lg">Add to Cart</button>
+            <button onclick="addToCart('${card.name}', ${card.price})" class="btn bg-[#15803D] text-white font-medium  w-full rounded-4xl text-base">Add to Cart</button>
         </div>
         `
 
@@ -183,7 +183,7 @@ const addToCart = (name, price) => {
     cartList.innerHTML=`
     <div class="bg-[#F0FDF4] rounded-xl flex justify-between text-xl p-4 mb-4 ">
                 <div class="space-y-2">
-                  <h3>${name}</h3>
+                  <h3 class="font-semibold">${name}</h3>
                   <p>৳${price} x 1</p>
                 </div>
                 <p class="removeClick cursor-pointer">❌</p>
