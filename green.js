@@ -1,7 +1,21 @@
+//load spinner function
+const loadSpinner = (isLoading) => {
+    const spinnerHtml = document.getElementById("spinner")
+    if(isLoading){
+        spinnerHtml.classList.remove("hidden")
+    }
+    else{
+        spinnerHtml.classList.add("hidden")
+    }
+}
+
+
 
 
 // loadCategoryList
 const loadCategoryList = () => {
+
+
     fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((list) => displayCatList(list.categories));
@@ -37,24 +51,41 @@ const displayCatList = (cat) => {
 }
 
 
-//category plant clicked api
+
+
+//load category plant clicked api
  const loadCatPlant = (id) => {
+    loadSpinner(true)       //load spinner call
+
     fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then((res) => res.json())
-    .then((pList) => displayCardList(pList.plants));
+    .then((pList) => {
+         displayCardList(pList.plants)
+         loadSpinner(false)   //load spinner call off
+    });
 }
 
 // load all plant cards 
 const loadAllPlantsCard = () => {
+    loadSpinner(true)       //load spinner call
+
     fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
-    .then((cardList) => displayCardList(cardList.plants));
+    .then((cardList) => {
+        displayCardList(cardList.plants)
+        loadSpinner(false)  //load spinner call off
+    });
 }
 
 //displayCardList
 const displayCardList = (cards) => {
     const cardContainer = document.getElementById("card_container")
-    cardContainer.innerHTML = ""
+    cardContainer.innerHTML = `
+    <!-- loading spinner  -->
+           <div id="spinner" class="flex items-center justify-center text-center gap-2 col-span-3  py-10 hidden">
+             <span class="loading loading-spinner loading-lg text-green-700"></span>  Loading...
+           </div>
+    `
 
     cards.forEach(card => {
         const cardDiv = document.createElement("div")
@@ -79,6 +110,9 @@ const displayCardList = (cards) => {
 }
 
 const loadModalPlant = (id) => {
+    
+
+
     fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
     .then((res) => res.json())
     .then((modal) => displayModal(modal.plants));
@@ -147,6 +181,6 @@ const addToCart = (name, price) => {
 
 
 
-loadModalPlant()
+// loadModalPlant()
 loadAllPlantsCard()
 loadCategoryList()
