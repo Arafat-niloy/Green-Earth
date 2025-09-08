@@ -17,7 +17,17 @@ const displayCatList = (cat) => {
         catDiv.className="cursor-pointer hover:text-white hover:bg-green-700 text-xl p-2 rounded"
         catDiv.textContent = element.category_name
 
-        catDiv.addEventListener("click", () => {
+        catDiv.addEventListener("click", (e) => {
+
+                   //active class remove 
+                   const activeEffect = document.querySelectorAll("#cat_list li")
+                   activeEffect.forEach(li => {
+                   li.classList.remove("active")
+                   })
+                   //active class add targeted plantName e
+                   e.target.classList.add("active")
+
+           //load cat plant function call 
            loadCatPlant(element.id)
         })
 
