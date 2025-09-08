@@ -29,7 +29,7 @@ const displayCatList = (cat) => {
 //all plants clicked
              const allPlants =   document.createElement("li")
              allPlants.className = "cursor-pointer hover:text-white hover:bg-green-700 text-xl p-2 rounded"
-             allPlants.textContent = "All Tress"
+             allPlants.textContent = "All Trees"
              
              allPlants.addEventListener("click", (e) => {
 
@@ -181,7 +181,7 @@ const addToCart = (name, price) => {
 
     const cartList = document.createElement("div")
     cartList.innerHTML=`
-    <div class="bg-[#F0FDF4] rounded-xl flex justify-between text-xl p-4 mb-4 ">
+    <div class="bg-[#F0FDF4] rounded-xl flex justify-between text-xl p-4 mb-4  ">
                 <div class="space-y-2">
                   <h3 class="font-semibold">${name}</h3>
                   <p>৳${price} x 1</p>
