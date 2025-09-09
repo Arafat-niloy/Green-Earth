@@ -22,7 +22,7 @@ var x = 20; // allowed
 
 - Block scoped (`{ }`)
 
-- Same scope এ re-declare করা যায়
+- Same scope এ re-declare করা যায় না ❌
 
 - Re-assign করা যায়
 
@@ -37,14 +37,14 @@ let y = 30; // not allowed in same block ❌
 
 - Block scoped
 
-- re-declared করা যায় না
+- re-declared করা যায় না ❌
 
-- re-assigned করা যায় না (for constant value)
+- re-assigned করা যায় না (for constant value) ❌
 
 Example:
 ```js
 const z = 10;
-z = 20; // ❌ not allowed
+z = 20; // not allowed ❌ 
 ```
 
 ## 2. What is the difference between map(), forEach(), and filter()?
@@ -58,7 +58,7 @@ z = 20; // ❌ not allowed
 Example:
 ```js
 const numbers = [1, 2, 3];
-const doubled = numbers.map(n => n * 2); // [2, 4, 6] নতুন array রিটার্ন করেছে
+const doubled = numbers.map(n => n * 2); // [2, 4, 6] নতুন array তে modified element রিটার্ন করেছে
 ```
 
 `forEach()`
@@ -71,7 +71,7 @@ Example:
 ```js
 const numbers = [1, 2, 3];
 numbers.forEach(n => console.log(n * 2)); 
-// শুধু print হবে, নতুন array হবে না
+//এখানে শুধু elements print হবে, কোনো নতুন array return হবে না
 ```
 
 `filter()`
