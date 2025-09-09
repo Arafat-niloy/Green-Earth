@@ -28,7 +28,7 @@ const displayCatList = (cat) => {
 
 //all plants clicked
              const allPlants =   document.createElement("li")
-             allPlants.className = "cursor-pointer hover:text-white hover:bg-green-700 text-xl p-2 rounded"
+             allPlants.className = "cursor-pointer hover:text-white hover:bg-green-500 text-xl p-2 rounded"
              allPlants.textContent = "All Trees"
              
              allPlants.addEventListener("click", (e) => {
@@ -52,7 +52,7 @@ const displayCatList = (cat) => {
     //category plants clicked
     cat.forEach(element => {
         const catDiv = document.createElement("li")
-        catDiv.className="cursor-pointer hover:text-white hover:bg-green-700 text-xl p-2 rounded"
+        catDiv.className="cursor-pointer hover:text-white hover:bg-green-500 text-xl p-2 rounded"
         catDiv.textContent = element.category_name
 
         catDiv.addEventListener("click", (e) => {
@@ -176,6 +176,7 @@ const displayModal = (content) => {
 //addToCart function
 let totalPrice = 0
 const addToCart = (name, price) => {
+    alert(`'${name}' is added to cart `)
     const cartContainer = document.getElementById("cart_List")
     // cartContainer.innerHTML=""
 
@@ -186,8 +187,11 @@ const addToCart = (name, price) => {
                   <h3 class="font-semibold">${name}</h3>
                   <p>৳${price} x 1</p>
                 </div>
+
                 <p class="removeClick cursor-pointer">❌</p>
-              </div>
+                
+    </div>
+    
     `
     //remove cartList
     cartList.querySelector(".removeClick").addEventListener("click", () =>{
